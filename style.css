@@ -6,18 +6,21 @@
 }
     
 .div0 {
-        border: 1px solid white;
-        height: 360px;
-        width: 1460px;
-        background: url(searchfindcover.png);
-        background-repeat: no-repeat;
-        text-align: center;
-        background-size:100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-    }  
+    border: 1px solid white;
+    height: 360px;
+    width: 1460px;
+    background-color: #FFB700; /* Optional, in case you want a background color */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px; /* Set the text size */
+    color: white; /* Set the text color */
+    font-weight: bold; /* Optional, to make text bold */
+    text-transform: uppercase; /* Optional, to make the text uppercase */
+}
+
+ 
         .div01 {
         border: 1px solid white;
         height: 260px;
