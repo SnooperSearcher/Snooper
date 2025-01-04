@@ -543,113 +543,18 @@
             <div class="div40"><div id="smart-button-container">
       <div style="text-align: center;">
         <div style="margin-bottom: 1.25rem;">
-          <p>You can Donate for our Project<br>If you don't have, for you is FREE</p>
-          <select id="item-options"><option value="Donate" price="1.79">Donate - 1.79 USD</option><option value="Donate" price="3">Donate - 3 USD</option><option value="Donate" price="5">Donate - 5 USD</option><option value="Donate" price="11">Donate - 11 USD</option><option value="Donate" price="15">Donate - 15 USD</option><option value="Donate" price="20">Donate - 20 USD</option><option value="Donate" price="50">Donate - 50 USD</option><option value="Donate" price="100">Donate - 100 USD</option><option value="" price=""> -  USD</option></select>
-          <select style="visibility: hidden" id="quantitySelect"></select>
-        </div>
-      <div id="paypal-button-container"></div>
-      </div>
-    </div>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-    <script>
-      function initPayPalButton() {
-        var shipping = 0;
-        var itemOptions = document.querySelector("#smart-button-container #item-options");
-    var quantity = parseInt();
-    var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
-    if (!isNaN(quantity)) {
-      quantitySelect.style.visibility = "visible";
-    }
-    var orderDescription = 'Donate';
-    if(orderDescription === '') {
-      orderDescription = 'Item';
-    }
-    paypal.Buttons({
-      style: {
-        shape: 'rect',
-        color: 'gold',
-        layout: 'vertical',
-        label: 'paypal',
-        
-      },
-      createOrder: function(data, actions) {
-        var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
-        var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
-        var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
-        if(quantitySelect.options.length > 0) {
-          quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
-        } else {
-          quantity = 1;
-        }
+          <p><h1>You can <span style="background-color: yellow; font-weight: bold; padding: 2px 5px; border-radius: 3px;">Donate</span> to my project.<br>
+If you can't, it is <span style="color: red; font-weight: bold;">FREE</span> for you.</h1></p>
 
-        tax *= quantity;
-        tax = Math.round(tax * 100) / 100;
-        var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
-        priceTotal = Math.round(priceTotal * 100) / 100;
-        var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+   <a href="https://paypal.me/augmentix?country.x=BA&locale.x=en_US/10" target="_blank" style="text-decoration: none;">
+  <button style="background-color: #FFB700; color: darkblue; border: none; padding: 10px 20px; border-radius: 5px; font-size: 16px; cursor: pointer;">
+    <b>Donate with PayPal
+  </button>
+</a>
+          </div><br>
 
-        return actions.order.create({
-          purchase_units: [{
-            description: orderDescription,
-            amount: {
-              currency_code: 'USD',
-              value: priceTotal,
-              breakdown: {
-                item_total: {
-                  currency_code: 'USD',
-                  value: itemTotalValue,
-                },
-                shipping: {
-                  currency_code: 'USD',
-                  value: shipping,
-                },
-                tax_total: {
-                  currency_code: 'USD',
-                  value: tax,
-                }
-              }
-            },
-            items: [{
-              name: selectedItemDescription,
-              unit_amount: {
-                currency_code: 'USD',
-                value: selectedItemPrice,
-              },
-              quantity: quantity
-            }]
-          }]
-        });
-      },
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(orderData) {
-          
-          // Full available details
-          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-          // Show a success message within this page, e.g.
-          const element = document.getElementById('paypal-button-container');
-          element.innerHTML = '';
-          element.innerHTML = '<h3>Thank you for your payment!</h3>';
-
-          // Or go to another URL:  actions.redirect('thank_you.html');
-
-        });
-      },
-      onError: function(err) {
-        console.log(err);
-      },
-    }).render('#paypal-button-container');
-  }
-  initPayPalButton();
-</script></div><br>
-            <div class="div33"><p><h3>You can add a Snooper extension on your Chrome Browser</h3><h2>Coming soon!!!</h2><align center></align><p><img src="logochr.png" alt="Extension" width="200" height="200">
-                <br>Open the Chrome Web Store<br>
-In the left column, click Apps or Extensions<br>
-Browse or search for what you'd like to add (Snooper)<br>
-When you find an Snooper extension, click Add to Chrome<br>
-Review the types of data that the extension will be able to access<br>
-Click Add extension<br>
-You'll see your Snooper extension in Chrome as buttons on the toolbar</p>
             </div></div></div>     
 </body>
 </html>
+
+
